@@ -6,6 +6,57 @@
     <title>Kalabaw sa Kubaw Kolektib - Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Define the custom keyframe animation for precise 15-image looping */
+        @keyframes custom-scroll-left {
+            0% { transform: translateX(0); }
+            /* Calculate the exact width of 15 images + their margins (300px image + 10px margin = 310px per image) */
+            100% { transform: translateX(calc(-15 * (300px + 10px))); }
+        }
+
+        .scroller-inner {
+            animation: custom-scroll-left 40s linear infinite; /* Apply the new custom animation, duration increased to 40s */
+            white-space: nowrap; /* Keep images in a single line */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            /* Ensure the scroller-inner is wide enough to contain all images for the animation */
+            width: max-content;
+        }
+
+        /* Ensure images can overlap when zoomed */
+        .image-scroller {
+            overflow: visible; /* Changed to visible to allow zoomed images to overlap */
+            /* Add padding to ensure zoomed images have space to expand into */
+            padding-top: 50px; /* Adjust as needed to give space above for zoom */
+            padding-bottom: 50px; /* Adjust as needed to give space below for zoom */
+            margin-top: -50px; /* Compensate for padding to keep overall layout */
+            margin-bottom: -50px; /* Compensate for padding to keep overall layout */
+            position: relative; /* Needed for z-index context */
+            z-index: 101; /* Increased z-index to be higher than the header's z-index */
+        }
+
+        .image-scroller .scroller-inner img {
+            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+            display: inline-block; /* Display images inline for horizontal scroll */
+            margin-right: 10px; /* Space between images */
+            /* Set a base z-index for non-hovered images */
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-scroller .scroller-inner img:hover {
+            transform: scale(2); /* Zooms the image to 200% of its size */
+            transform-origin: center center; /* Ensures zooming originates from the center */
+            z-index: 9999; /* Increased z-index to ensure it overlaps everything */
+            position: relative; /* z-index only works on positioned elements */
+        }
+
+        /* Ensure header has a lower z-index than the zoomed image */
+        header {
+            position: relative; /* z-index only works on positioned elements */
+            z-index: 100; /* Set a specific z-index for the header, higher than normal content but lower than hovered image */
+            background-color: #333; /* Example: ensure header has a background to cover content below */
+        }
+    </style>
 </head>
 <body class="homepage-background">
     <header>
@@ -71,13 +122,13 @@
             <img src="images/scene-6.jpg" alt="Theatrical Scene 6 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+6';">
             <img src="images/scene-7.jpg" alt="Theatrical Scene 7 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+7';">
             <img src="images/scene-8.jpg" alt="Theatrical Scene 8 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+8';">
-            <img src="images/scene-9.jpg" alt="Theatrical Scene 9 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+9';">
-            <img src="images/scene-10.jpg" alt="Theatrical Scene 10 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+10';">
-            <img src="images/scene-11.jpg" alt="Theatrical Scene 11 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+11';">
-            <img src="images/scene-12.jpg" alt="Theatrical Scene 12 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+12';">
-            <img src="images/scene-13.jpg" alt="Theatrical Scene 13 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
-            <img src="images/scene-14.jpg" alt="Theatrical Scene 14 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
-            <img src="images/scene-15.jpg" alt="Theatrical Scene 15 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
+            <img src="images/scene-9.jpg" alt="Theatrical Scene 9" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+9';">
+            <img src="images/scene-10.jpg" alt="Theatrical Scene 10" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+10';">
+            <img src="images/scene-11.jpg" alt="Theatrical Scene 11" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+11';">
+            <img src="images/scene-12.jpg" alt="Theatrical Scene 12" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+12';">
+            <img src="images/scene-13.jpg" alt="Theatrical Scene 13" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
+            <img src="images/scene-14.jpg" alt="Theatrical Scene 14" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
+            <img src="images/scene-15.jpg" alt="Theatrical Scene 15" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
         </div>
     </section>
     <button id="theme-toggle" class="theme-toggle">
@@ -130,5 +181,31 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollerInner = document.querySelector('.scroller-inner');
+            // Manual scroll event listeners were removed in the previous turn.
+
+            // Mobile navigation toggle (assuming script.js handles this, but including for completeness)
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            if (menuToggle && mobileNav) {
+                menuToggle.addEventListener('click', () => {
+                    mobileNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+
+            // Theme toggle (assuming script.js handles this, but including for completeness)
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-theme');
+                    // You might want to save this preference in localStorage
+                });
+            }
+        });
+    </script>
 </body>
 </html>

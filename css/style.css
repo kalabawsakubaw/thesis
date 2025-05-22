@@ -1000,7 +1000,7 @@ body.dark-mode .image-scroller {
     will-change: transform;
     /* Animation: name, duration, timing-function, iteration-count */
     /* Adjusted duration for 15 images to maintain similar speed */
-    animation: scroll-images 75s linear infinite; /* Adjusted from 30s for 6 images to 75s for 15 images (30 * 15/6 = 75) */
+    animation: scroll-images 150s linear infinite; /* Adjusted from 60s for 6 images to 150s for 15 images (60 * 15/6 = 150) */
 }
 
 .scroller-inner img {
