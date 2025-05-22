@@ -6,137 +6,13 @@
     <title>Kalabaw sa Kubaw Kolektib - Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Prevent horizontal overflow on the root elements */
-        html, body {
-            overflow-x: hidden;
-        }
-
-        /* Define the custom keyframe animation for precise 15-image looping */
-        @keyframes custom-scroll-left {
-            0% { transform: translateX(0); }
-            /* Calculate the exact width of 15 images + their margins (300px image + 10px margin = 310px per image) */
-            100% { transform: translateX(calc(-15 * (300px + 10px))); }
-        }
-
-        .scroller-inner {
-            animation: custom-scroll-left 40s linear infinite; /* Apply the new custom animation, duration increased to 40s */
-            white-space: nowrap; /* Keep images in a single line */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            display: inline-block; /* Ensure it behaves like an inline block to allow children to flow */
-            width: calc(30 * (300px + 10px)); /* 30 images (15 unique + 15 duplicates) * (image width + margin) */
-        }
-
-        /* Ensure images can overlap when zoomed */
-        .image-scroller {
-            overflow: visible; /* Changed to visible to allow zoomed images to overlap */
-            position: relative; /* Needed for z-index context */
-            z-index: 10; /* Lower than header, but higher than default content */
-            padding: 0; /* Ensure no extra padding */
-            margin: 0; /* Ensure no extra margin */
-            width: 100%; /* Ensure the container takes full width */
-        }
-
-        .image-scroller .scroller-inner img {
-            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
-            display: inline-block; /* Display images inline for horizontal scroll */
-            margin-right: 10px; /* Space between images */
-            position: relative; /* Crucial: make positioned for z-index to work */
-            z-index: 1; /* Base z-index for images within the scroller */
-        }
-
-        .image-scroller .scroller-inner img:hover {
-            transform: scale(2); /* Zooms the image to 200% of its size */
-            transform-origin: center center; /* Ensures zooming originates from the center */
-            z-index: 9999; /* Increased z-index to ensure it overlaps everything */
-        }
-
-        /* Ensure header has a higher z-index than the image scroller */
-        header {
-            position: relative; /* z-index only works on positioned elements */
-            z-index: 100; /* Set a specific z-index for the header, higher than image-scroller */
-            background-color: #333; /* Example: ensure header has a background to cover content below */
-        }
-
-        /* Ensure main content has a lower z-index than the image scroller */
-        main {
-            position: relative;
-            z-index: 5; /* Lower than image-scroller, higher than default */
-        }
-
-        /* Mobile navigation specific styles */
-        .desktop-nav {
-            display: block; /* Default to block for desktop */
-        }
-        .mobile-nav, .menu-toggle {
-            display: none; /* Default to hidden for mobile elements */
-        }
-
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none; /* Hide desktop nav on small screens */
-            }
-            .mobile-nav {
-                display: block; /* Show mobile nav */
-                position: absolute;
-                top: 100%; /* Position below header */
-                left: 0;
-                width: 100%;
-                background-color: #444; /* Darker background for mobile nav */
-                flex-direction: column;
-                align-items: center;
-                padding: 10px 0;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                max-height: 0; /* Start hidden */
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-                z-index: 110; /* Ensure mobile nav is above the header */
-            }
-            .mobile-nav.active {
-                max-height: 300px; /* Adjust as needed to reveal menu */
-            }
-            .mobile-nav ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-                text-align: center;
-            }
-            .mobile-nav li {
-                padding: 10px 0;
-            }
-            .mobile-nav a {
-                color: white;
-                text-decoration: none;
-                font-size: 1.1em;
-                display: block;
-                padding: 5px 0;
-            }
-            .menu-toggle {
-                display: flex; /* Show hamburger icon */
-                flex-direction: column;
-                justify-content: space-around;
-                width: 30px;
-                height: 20px;
-                cursor: pointer;
-                z-index: 101; /* Ensure hamburger is above header content */
-            }
-            .menu-toggle span {
-                display: block;
-                width: 100%;
-                height: 3px;
-                background-color: white;
-                border-radius: 2px;
-            }
-        }
-    </style>
 </head>
 <body class="homepage-background">
     <header>
         <div class="container">
             <div class="logo-area">
                 <a href="https://www.pup.edu.ph" target="_blank" rel="noopener noreferrer">
-                    <img src="https://imgur.com/Jo8KGsk.png" alt="University Logo" class="university-logo">
+                    <img src="images/university-logo.png" alt="University Logo" class="university-logo">
                 </a>
                 <a href="index.html" class="site-title">Kalabaw sa Kubaw Kolektib</a>
             </div>
@@ -171,12 +47,12 @@
 
     <section class="image-scroller">
         <div class="scroller-inner">
-            <img src="https://imgur.com/bk3lI0h.jpg" alt="Theatrical Scene 1" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+1';">
-            <img src="https://imgur.com/FKRVA48.jpg" alt="Theatrical Scene 2" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+2';">
-            <img src="https://imgur.com/rjwIpEC.jpg" alt="Theatrical Scene 3" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+3';">
-            <img src="https://imgur.com/Ip8YvOT.jpg" alt="Theatrical Scene 4" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+4';">
-            <img src="https://imgur.com/r2EtyJJ.jpg" alt="Theatrical Scene 5" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+5';">
-            <img src="https://imgur.com/mcAjoZh.jpg" alt="Theatrical Scene 6" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+6';">
+            <img src="images/scene-1.jpg" alt="Theatrical Scene 1" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+1';">
+            <img src="images/scene-2.jpg" alt="Theatrical Scene 2" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+2';">
+            <img src="images/scene-3.jpg" alt="Theatrical Scene 3" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+3';">
+            <img src="images/scene-4.jpg" alt="Theatrical Scene 4" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+4';">
+            <img src="images/scene-5.jpg" alt="Theatrical Scene 5" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+5';">
+            <img src="images/scene-6.jpg" alt="Theatrical Scene 6" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+6';">
             <img src="images/scene-7.jpg" alt="Theatrical Scene 7" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+7';">
             <img src="images/scene-8.jpg" alt="Theatrical Scene 8" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+8';">
             <img src="images/scene-9.jpg" alt="Theatrical Scene 9" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+9';">
@@ -187,21 +63,21 @@
             <img src="images/scene-14.jpg" alt="Theatrical Scene 14" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
             <img src="images/scene-15.jpg" alt="Theatrical Scene 15" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
 
-            <img src="images/scene-1.jpg" alt="Theatrical Scene 1 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+1';'>
-            <img src="images/scene-2.jpg" alt="Theatrical Scene 2 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+2';'>
-            <img src="images/scene-3.jpg" alt="Theatrical Scene 3 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+3';'>
-            <img src="images/scene-4.jpg" alt="Theatrical Scene 4 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+4';'>
-            <img src="images/scene-5.jpg" alt="Theatrical Scene 5 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+5';'>
-            <img src="images/scene-6.jpg" alt="Theatrical Scene 6 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+6';'>
-            <img src="images/scene-7.jpg" alt="Theatrical Scene 7 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+7';'>
-            <img src="images/scene-8.jpg" alt="Theatrical Scene 8 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+8';'>
-            <img src="images/scene-9.jpg" alt="Theatrical Scene 9" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+9';'>
-            <img src="images/scene-10.jpg" alt="Theatrical Scene 10" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+10';'>
-            <img src="images/scene-11.jpg" alt="Theatrical Scene 11" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+11';'>
-            <img src="images/scene-12.jpg" alt="Theatrical Scene 12" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+12';'>
-            <img src="images/scene-13.jpg" alt="Theatrical Scene 13" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
-            <img src="images/scene-14.jpg" alt="Theatrical Scene 14" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
-            <img src="images/scene-15.jpg" alt="Theatrical Scene 15" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
+            <img src="images/scene-1.jpg" alt="Theatrical Scene 1 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+1';">
+            <img src="images/scene-2.jpg" alt="Theatrical Scene 2 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+2';">
+            <img src="images/scene-3.jpg" alt="Theatrical Scene 3 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+3';">
+            <img src="images/scene-4.jpg" alt="Theatrical Scene 4 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+4';">
+            <img src="images/scene-5.jpg" alt="Theatrical Scene 5 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+5';">
+            <img src="images/scene-6.jpg" alt="Theatrical Scene 6 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+6';">
+            <img src="images/scene-7.jpg" alt="Theatrical Scene 7 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+7';">
+            <img src="images/scene-8.jpg" alt="Theatrical Scene 8 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+8';">
+            <img src="images/scene-9.jpg" alt="Theatrical Scene 9 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+9';">
+            <img src="images/scene-10.jpg" alt="Theatrical Scene 10 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+10';">
+            <img src="images/scene-11.jpg" alt="Theatrical Scene 11 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+11';">
+            <img src="images/scene-12.jpg" alt="Theatrical Scene 12 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+12';">
+            <img src="images/scene-13.jpg" alt="Theatrical Scene 13 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
+            <img src="images/scene-14.jpg" alt="Theatrical Scene 14 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
+            <img src="images/scene-15.jpg" alt="Theatrical Scene 15 (Duplicate)" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
         </div>
     </section>
     <button id="theme-toggle" class="theme-toggle">
@@ -212,20 +88,19 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Sining na Mapagpalaya:<br>A Documentary Theater About Ericson Acosta</h1>
-                <p class="subtitle">A Documentary Musical presented to Department of Performing Arts
-				                    <br>Polytechnic University of the Philippines</p>
+                <h1>The Theatrical Production Journey:<br>From Conception to Live Act</h1>
+                <p class="subtitle">A Comprehensive Documentary by Kalabaw sa Kubaw Kolektib</p>
                 <p class="author-uni">
                     Submitted by:
-                    <br>De Andres, Patricia Angelica Demetrio
-                    <br>Guevara, Eusebio III C.
-                    <br>Leonardo, Natahaniel L.
-	                <br>Mangi, Lianah Marie B.
-                    <br>Paigones, Jan Kimberly Mae T.
-					<br>Puno, Ymanuel Luis M.
-           
+                    <br>Ymmanuel Puno
+                    <br>Eusebio Guevarra
+                    <br>Lianah Marie B. Mangi
+	                <br>Patricia De Andres
+                    <br>Nathaniel Leonardo
+					<br>Jan Kimberly Paigones
+                    <br>Polytechnic University of the Philippines
                 </p>
-                <p class="synopsis-logline">“Mula Kay Eric Hanggang” is a poignant artistic production that chronicles the life, struggle, and unwavering spirit of Filipino poet and activist Ericson Acosta. Through a powerful blend of performance and creative expression, the production amplifies his fight for national freedom, human rights, and justice—telling a compelling story of courage and advocacy. </p>
+                <p class="synopsis-logline">Explore the intricate journey of creating a live theatrical performance, from the initial spark of an idea to the final stage presentation and its subsequent documentation.</p>
                 <div class="navigation-buttons">
                     <a href="pages/pre-production.html" class="button">Explore the Journey</a>
                     <a href="pages/about-collective.html" class="button button-outline">About the Kolektib</a>
@@ -235,7 +110,7 @@
 
         <section class="introduction">
             <div class="container">
-                <h2>Welcome to the Journey of Kalabaw sa Kubaw Kolektib Theatrical Production</h2>
+                <h2>Welcome to the Journey of Theatrical Production</h2>
                 <p>This website serves as a detailed documentary through the essential stages of a live theatrical performance: Pre-Production, Production (including the live run), and Documentation & Archiving. For aspiring creatives, theater enthusiasts, students, or simply the curious, we present each stage with clarity and in-depth understanding.</p>
                 <p>Kalabaw sa Kubaw Kolektib aims to showcase the meticulous planning, collaborative efforts, and artistic dedication required to transform a script into a living, breathing stage act. Dive in to discover the passion behind the scenes!</p>
                 <div class="navigation-buttons">
@@ -254,31 +129,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const scrollerInner = document.querySelector('.scroller-inner');
-            // Manual scroll event listeners were removed in the previous turn.
-
-            // Mobile navigation toggle (assuming script.js handles this, but including for completeness)
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileNav = document.getElementById('mobile-nav');
-
-            if (menuToggle && mobileNav) {
-                menuToggle.addEventListener('click', () => {
-                    mobileNav.classList.toggle('active');
-                    menuToggle.classList.toggle('active');
-                });
-            }
-
-            // Theme toggle (assuming script.js handles this, but including for completeness)
-            const themeToggle = document.getElementById('theme-toggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    document.body.classList.toggle('dark-theme');
-                    // You might want to save this preference in localStorage
-                });
-            }
-        });
-    </script>
 </body>
 </html>
