@@ -34,7 +34,7 @@ body {
 /* Homepage specific background (only for index.html) */
 body.homepage-background {
     /* Slightly less intense gradient for day mode since text will be white */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/EjLxVov.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/WZMzQlQ.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -52,9 +52,29 @@ body.pre-production-background {
     background-color: #333; /* Fallback color */
 }
 
+/* Production page specific background */
+body.production-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/EjLxVov.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #333; /* Fallback color */
+}
+
+/* Post-Production page specific background */
+body.post-production-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/EjLxVov.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #333; /* Fallback color */
+}
+
 /* About the Kolektib and Production Team pages specific background */
 body.about-kolektib-background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/about-the-kolektib-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/a97ojjN.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -72,19 +92,31 @@ body.dark-mode {
 /* Homepage specific background in Dark Mode */
 body.homepage-background.dark-mode {
     /* Stronger gradient for dark mode to ensure white text visibility */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/9yneXG5.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/WZMzQlQ.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
 /* Pre-Production page specific background in Dark Mode */
 body.pre-production-background.dark-mode {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/QIRzG7t.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/EjLxVov.jpg');
+    background-color: #222; /* Darker fallback for dark mode */
+}
+
+/* Production page specific background in Dark Mode */
+body.production-background.dark-mode {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/EjLxVov.jpg');
+    background-color: #222; /* Darker fallback for dark mode */
+}
+
+/* Post-Production page specific background in Dark Mode */
+body.post-production-background.dark-mode {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/EjLxVov.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
 /* About the Kolektib and Production Team pages specific background in Dark Mode */
 body.about-kolektib-background.dark-mode {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('../images/about-the-kolektib-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/a97ojjN.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
@@ -118,6 +150,28 @@ body.pre-production-background header,
 body.pre-production-background .page-content .content-section,
 body.pre-production-background .page-navigation,
 body.pre-production-background .mobile-nav {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background, 90% opaque */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Soft border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-bottom: 20px; /* Add some space between sections for visual separation */
+}
+
+/* Production page adjustments for elements when full-page background is active */
+body.production-background header,
+body.production-background .page-content .content-section,
+body.production-background .page-navigation,
+body.production-background .mobile-nav {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background, 90% opaque */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Soft border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-bottom: 20px; /* Add some space between sections for visual separation */
+}
+
+/* Post-Production page adjustments for elements when full-page background is active */
+body.post-production-background header,
+body.post-production-background .page-content .content-section,
+body.post-production-background .page-navigation,
+body.post-production-background .mobile-nav {
     background-color: rgba(255, 255, 255, 0.9); /* Light background, 90% opaque */
     border: 1px solid rgba(0, 0, 0, 0.05); /* Soft border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
@@ -163,6 +217,24 @@ body.pre-production-background footer {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
 }
 
+/* Footer background transparent on production page */
+body.production-background footer {
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    color: var(--color-white); /* Ensure text is readable over the dark background */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
+}
+
+/* Footer background transparent on post-production page */
+body.post-production-background footer {
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    color: var(--color-white); /* Ensure text is readable over the dark background */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
+}
+
 /* Footer background transparent on about the kolektib and production team pages */
 body.about-kolektib-background footer {
     background-color: transparent;
@@ -188,6 +260,26 @@ body.pre-production-background.dark-mode header,
 body.pre-production-background.dark-mode .page-content .content-section,
 body.pre-production-background.dark-mode .page-navigation,
 body.pre-production-background.dark-mode .mobile-nav {
+    background-color: rgba(44, 44, 44, 0.9); /* Dark background, 90% opaque */
+    border-color: rgba(255, 255, 255, 0.1); /* Lighter border for dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode version for the production page background elements */
+body.production-background.dark-mode header,
+body.production-background.dark-mode .page-content .content-section,
+body.production-background.dark-mode .page-navigation,
+body.production-background.dark-mode .mobile-nav {
+    background-color: rgba(44, 44, 44, 0.9); /* Dark background, 90% opaque */
+    border-color: rgba(255, 255, 255, 0.1); /* Lighter border for dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode version for the post-production page background elements */
+body.post-production-background.dark-mode header,
+body.post-production-background.dark-mode .page-content .content-section,
+body.post-production-background.dark-mode .page-navigation,
+body.post-production-background.dark-mode .mobile-nav {
     background-color: rgba(44, 44, 44, 0.9); /* Dark background, 90% opaque */
     border-color: rgba(255, 255, 255, 0.1); /* Lighter border for dark mode */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -223,6 +315,24 @@ body.homepage-background.dark-mode footer {
 
 /* Footer background transparent on pre-production page in dark mode */
 body.pre-production-background.dark-mode footer {
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    color: var(--color-white); /* Ensure text is white in dark mode */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer background transparent on production page in dark mode */
+body.production-background.dark-mode footer {
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    color: var(--color-white); /* Ensure text is white in dark mode */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer background transparent on post-production page in dark mode */
+body.post-production-background.dark-mode footer {
     background-color: transparent;
     border-top: none;
     box-shadow: none;
@@ -665,6 +775,26 @@ body.pre-production-background .page-title {
 }
 
 body.pre-production-background.dark-mode .page-title {
+    color: var(--color-white); /* Keep white in dark mode too */
+}
+
+/* Production page specific adjustments for page-title text color */
+body.production-background .page-title {
+    color: var(--color-white); /* White text for page title on production background */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Strong text-shadow for readability */
+}
+
+body.production-background.dark-mode .page-title {
+    color: var(--color-white); /* Keep white in dark mode too */
+}
+
+/* Post-Production page specific adjustments for page-title text color */
+body.post-production-background .page-title {
+    color: var(--color-white); /* White text for page title on production background */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Strong text-shadow for readability */
+}
+
+body.post-production-background.dark-mode .page-title {
     color: var(--color-white); /* Keep white in dark mode too */
 }
 
