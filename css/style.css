@@ -34,7 +34,7 @@ body {
 /* Homepage specific background (only for index.html) */
 body.homepage-background {
     /* Slightly less intense gradient for day mode since text will be white */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/kolektib-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/wwaVulo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -44,7 +44,7 @@ body.homepage-background {
 
 /* Pre-Production page specific background */
 body.pre-production-background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/pre-production-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/uW4lfWb.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -72,13 +72,13 @@ body.dark-mode {
 /* Homepage specific background in Dark Mode */
 body.homepage-background.dark-mode {
     /* Stronger gradient for dark mode to ensure white text visibility */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('../images/kolektib-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/wwaVulo.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
 /* Pre-Production page specific background in Dark Mode */
 body.pre-production-background.dark-mode {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('../images/pre-production-hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/uW4lfWb.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
@@ -1000,7 +1000,7 @@ body.dark-mode .image-scroller {
     will-change: transform;
     /* Animation: name, duration, timing-function, iteration-count */
     /* Adjusted duration for 15 images to maintain similar speed */
-    animation: scroll-images 75s linear infinite; /* Adjusted from 30s for 6 images to 75s for 15 images (30 * 15/6 = 75) */
+    animation: scroll-images 5s linear infinite; /* Adjusted from 60s to 5s */
 }
 
 .scroller-inner img {
@@ -1013,6 +1013,10 @@ body.dark-mode .image-scroller {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
     opacity: 0.8; /* Made images slightly transparent */
+    /* Add this for overlapping effect */
+    position: relative; /* Essential for z-index to work */
+    z-index: 1; /* Default z-index */
+    transform-origin: center center; /* Ensures zoom is centered */
 }
 
 body.dark-mode .scroller-inner img {
@@ -1021,7 +1025,7 @@ body.dark-mode .scroller-inner img {
 
 /* Hover effect for images in the scroller */
 .scroller-inner img:hover {
-    transform: scale(2); /* Zooms the image to 2x its size */
+    transform: scale(1.3); /* Zooms the image to 1.3x its size */
     z-index: 10; /* Brings the hovered image to the front */
     opacity: 1; /* Makes the hovered image fully opaque */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
@@ -1220,4 +1224,3 @@ body.dark-mode .scroller-inner img {
         max-width: 120px; /* Smaller image on mobile */
         height: 120px;
     }
-}
