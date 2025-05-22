@@ -34,7 +34,7 @@ body {
 /* Homepage specific background (only for index.html) */
 body.homepage-background {
     /* Slightly less intense gradient for day mode since text will be white */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://imgur.com/a/kolektib-hero-bg-A8ulTuB.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/kolektib-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -72,7 +72,7 @@ body.dark-mode {
 /* Homepage specific background in Dark Mode */
 body.homepage-background.dark-mode {
     /* Stronger gradient for dark mode to ensure white text visibility */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://imgur.com/a/kolektib-hero-bg-A8ulTuB');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('../images/kolektib-hero-bg.jpg');
     background-color: #222; /* Darker fallback for dark mode */
 }
 
