@@ -23,9 +23,7 @@
             animation: custom-scroll-left 40s linear infinite; /* Apply the new custom animation, duration increased to 40s */
             white-space: nowrap; /* Keep images in a single line */
             -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            /* Removed width: max-content; to prevent mobile zoom-out */
             display: inline-block; /* Ensure it behaves like an inline block to allow children to flow */
-            /* Explicitly set a very large width to contain all images for animation without relying on max-content */
             width: calc(30 * (300px + 10px)); /* 30 images (15 unique + 15 duplicates) * (image width + margin) */
         }
 
@@ -33,7 +31,7 @@
         .image-scroller {
             overflow: visible; /* Changed to visible to allow zoomed images to overlap */
             position: relative; /* Needed for z-index context */
-            z-index: 1000; /* Increased z-index significantly to overlap header and main content */
+            z-index: 10; /* Lower than header, but higher than default content */
             padding: 0; /* Ensure no extra padding */
             margin: 0; /* Ensure no extra margin */
             width: 100%; /* Ensure the container takes full width */
@@ -51,17 +49,22 @@
             transform: scale(2); /* Zooms the image to 200% of its size */
             transform-origin: center center; /* Ensures zooming originates from the center */
             z-index: 9999; /* Increased z-index to ensure it overlaps everything */
-            /* position: relative is already set on .image-scroller .scroller-inner img */
         }
 
-        /* Ensure header has a lower z-index than the zoomed image */
+        /* Ensure header has a higher z-index than the image scroller */
         header {
             position: relative; /* z-index only works on positioned elements */
-            z-index: 10; /* Set a specific z-index for the header, lower than hovered image */
+            z-index: 100; /* Set a specific z-index for the header, higher than image-scroller */
             background-color: #333; /* Example: ensure header has a background to cover content below */
         }
 
-        /* Basic mobile responsiveness for navigation */
+        /* Ensure main content has a lower z-index than the image scroller */
+        main {
+            position: relative;
+            z-index: 5; /* Lower than image-scroller, higher than default */
+        }
+
+        /* Mobile navigation specific styles */
         .desktop-nav {
             display: block; /* Default to block for desktop */
         }
@@ -87,7 +90,7 @@
                 max-height: 0; /* Start hidden */
                 overflow: hidden;
                 transition: max-height 0.3s ease-out;
-                z-index: 99; /* Ensure mobile nav is above other content but below hovered image */
+                z-index: 110; /* Ensure mobile nav is above the header */
             }
             .mobile-nav.active {
                 max-height: 300px; /* Adjust as needed to reveal menu */
@@ -116,6 +119,7 @@
                 width: 30px;
                 height: 20px;
                 cursor: pointer;
+                z-index: 101; /* Ensure hamburger is above header content */
             }
             .menu-toggle span {
                 display: block;
@@ -195,7 +199,7 @@
             <img src="images/scene-10.jpg" alt="Theatrical Scene 10" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4682b4/ffffff?text=Scene+10';'>
             <img src="images/scene-11.jpg" alt="Theatrical Scene 11" onerror="this.onerror=null;this.src='https://placehold.co/300x200/da70d6/ffffff?text=Scene+11';'>
             <img src="images/scene-12.jpg" alt="Theatrical Scene 12" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ffd700/333333?text=Scene+12';'>
-            <img src="images/scene-13.jpg" alt="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
+            <img src="images/scene-13.jpg" alt="Theatrical Scene 13" onerror="this.onerror=null;this.src='https://placehold.co/300x200/8a2be2/ffffff?text=Scene+13';">
             <img src="images/scene-14.jpg" alt="Theatrical Scene 14" onerror="this.onerror=null;this.src='https://placehold.co/300x200/008080/ffffff?text=Scene+14';">
             <img src="images/scene-15.jpg" alt="Theatrical Scene 15" onerror="this.onerror=null;this.src='https://placehold.co/300x200/ff6347/ffffff?text=Scene+15';">
         </div>
